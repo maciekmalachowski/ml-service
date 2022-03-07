@@ -24,6 +24,9 @@ from rest_framework.response import Response
 from apps.ml.registry import MLRegistry
 from server.wsgi import registry
 
+from django.db.models import F
+import datetime
+
 class EndpointViewSet(
     mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet
 ):
@@ -145,9 +148,6 @@ class ABTestViewSet(
 
         except Exception as e:
             raise APIException(str(e))
-
-from django.db.models import F
-import datetime
 
 class StopABTestView(views.APIView):
     def post(self, request, ab_test_id, format=None):

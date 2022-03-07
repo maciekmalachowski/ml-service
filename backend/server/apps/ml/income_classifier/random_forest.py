@@ -31,6 +31,7 @@ class RandomForestClassifier:
 
     def predict(self, input_data):
         return self.model.predict_proba(input_data)
+        
 
     def postprocessing(self, input_data):
         label = "<=50K"

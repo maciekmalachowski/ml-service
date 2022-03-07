@@ -1,4 +1,3 @@
-# the `backend/server/server/wsgi.py file
 import os
 from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')
@@ -20,7 +19,7 @@ try:
                             algorithm_name="random forest",
                             algorithm_status="production",
                             algorithm_version="0.0.1",
-                            owner="Piotr",
+                            owner="Maciek",
                             algorithm_description="Random Forest with simple pre- and post-processing",
                             algorithm_code=inspect.getsource(RandomForestClassifier))
 
@@ -32,8 +31,8 @@ try:
                             algorithm_name="extra trees",
                             algorithm_status="testing",
                             algorithm_version="0.0.1",
-                            owner="Piotr",
+                            owner="Maciek",
                             algorithm_description="Extra Trees with simple pre- and post-processing",
-                            algorithm_code=inspect.getsource(RandomForestClassifier))
+                            algorithm_code=inspect.getsource(ExtraTreesClassifier))
 except Exception as e:
     print("Exception while loading the algorithms to the registry,", str(e))
